@@ -6,7 +6,7 @@ Simple JSON-API for the Wlanthermo project <http://wlanthermo.com>.
 
 1.) Installation
 ------------
-If you have a default wlanthermo installation in /var/www, simply copy the src folder of wlanthermo-api into /var/www/api. You should then be able to make API calls like http://your.wlanthermo/api/?action=latest to request the latest temperature values.
+If you have a default wlanthermo installation in /var/www, simply copy the src folder of wlanthermo-api into /var/www/api. You should then be able to make API calls like http://your.wlanthermo/api/?action=latest to request the latest temperature values. You should change the default credentials for the Basic-HTTP-Auth as described below.
 
 
 2.) Configuration
