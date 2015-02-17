@@ -4,10 +4,23 @@ namespace WlanThermo\API;
 
 use WlanThermo\API\Exception\Error404Exception;
 
-require_once PATH_LIB . '/access_protection.php';
+require_once PATH_LIB . '/accessProtection.php';
 
+/**
+ * Simple FrontController class for dispatching incoming
+ * requests.
+ *
+ * Class FrontController
+ * @package WlanThermo\API
+ */
 class FrontController
 {
+    /**
+     * Dispatches the given request,
+     *
+     * @param array $get
+     * @param array $post
+     */
     public static function dispatch(array $get, array $post)
     {
         $action = isset($get['action']) ? $get['action'] : '';
@@ -27,16 +40,21 @@ class FrontController
                 $result = $controller->dispatch($get, $post);
                 self::jsonResponse($result);
             } catch (Error404Exception $e) {
-                self::dispatch404($e->getData());
+                self::trigger404($e->getData());
             }
         } else {
-            self::dispatch404(array(
+            self::trigger404(array(
                 'msg' => 'Not found'
             ));
         }
     }
 
-    public static function dispatch404(array $data)
+    /**
+     * Triggers a 404 error and terminates the request.
+     *
+     * @param array $data
+     */
+    public static function trigger404(array $data)
     {
         $data['status'] = 404;
 
@@ -67,6 +85,11 @@ class FrontController
         }
     }
 
+    /**
+     * Terminates the request by sending a JSON response.
+     *
+     * @param array $data
+     */
     protected static function jsonResponse(array $data)
     {
         if (!isset($data['status'])) {
@@ -74,7 +97,7 @@ class FrontController
         }
 
         header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($data);
+        echo json_encode($data, JSON_PRETTY_PRINT);
         exit;
     }
 }

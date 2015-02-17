@@ -5,10 +5,10 @@ namespace WlanThermo\API\Controller;
 use WlanThermo\API\Exception\Error404Exception;
 use WlanThermo\API\Service\TemperatureService;
 
-require_once PATH_LIB . '/access_protection.php';
+require_once PATH_LIB . '/accessProtection.php';
 
 /**
- * Controller for requesting the n latest tempperature values.
+ * Controller for requesting the n latest temperature values.
  *
  * Class CurrentTemperature
  * @package WlanThermo\API\Controller

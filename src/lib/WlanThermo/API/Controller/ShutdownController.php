@@ -2,13 +2,20 @@
 
 namespace WlanThermo\API\Controller;
 
-
 use WlanThermo\API\Service\ConfigService;
 
+require_once PATH_LIB . '/accessProtection.php';
+
+/**
+ * Controller for shutting down the device.
+ *
+ * Class ShutdownController
+ * @package WlanThermo\API\Controller
+ */
 class ShutdownController extends AbstractController
 {
     /**
-     * Runs the controller specific logic.
+     * Shuts down the device.
      *
      * @return array
      */
@@ -21,4 +28,4 @@ class ShutdownController extends AbstractController
             'msg' => 'wlanthermo shutdown queued'
         );
     }
-}
+

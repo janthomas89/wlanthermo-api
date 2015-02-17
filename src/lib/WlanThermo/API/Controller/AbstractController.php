@@ -4,8 +4,14 @@ namespace WlanThermo\API\Controller;
 
 use WlanThermo\API\Exception\Error404Exception;
 
-require_once PATH_LIB . '/access_protection.php';
+require_once PATH_LIB . '/accessProtection.php';
 
+/**
+ * Abstract controller class providing some utility functions.
+ *
+ * Class AbstractController
+ * @package WlanThermo\API\Controller
+ */
 abstract class AbstractController
 {
     /**

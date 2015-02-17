@@ -1,14 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jan
- * Date: 16.02.15
- * Time: 20:54
- */
 
 namespace WlanThermo\API\Service;
 
+require_once PATH_LIB . '/accessProtection.php';
 
+/**
+ * Service class for managing logfiles and plotfiles.
+ *
+ * Class LogfileService
+ * @package WlanThermo\API\Service
+ */
 class LogfileService
 {
     /**

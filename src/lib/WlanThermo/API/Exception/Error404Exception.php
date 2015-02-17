@@ -2,12 +2,18 @@
 
 namespace WlanThermo\API\Exception;
 
-require_once PATH_LIB . '/access_protection.php';
+require_once PATH_LIB . '/accessProtection.php';
 
+/**
+ * 404 Exception with extra payload.
+ *
+ * Class Error404Exception
+ * @package WlanThermo\API\Exception
+ */
 class Error404Exception extends \Exception
 {
     /**
-     * @var array
+     * @var array Extra Payload
      */
     protected $data;
 
@@ -26,4 +32,4 @@ class Error404Exception extends \Exception
     {
         $this->data = $data;
     }
-} 
+}

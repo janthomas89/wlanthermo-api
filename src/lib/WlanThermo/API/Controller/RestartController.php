@@ -2,13 +2,20 @@
 
 namespace WlanThermo\API\Controller;
 
-
 use WlanThermo\API\Service\ConfigService;
 
+require_once PATH_LIB . '/accessProtection.php';
+
+/**
+ * Controller for restarting the device.
+ *
+ * Class RestartController
+ * @package WlanThermo\API\Controller
+ */
 class RestartController extends AbstractController
 {
     /**
-     * Runs the controller specific logic.
+     * Restarts the device.
      *
      * @return array
      */

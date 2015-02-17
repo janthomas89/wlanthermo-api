@@ -5,8 +5,10 @@ namespace WlanThermo\API\Service;
 use WlanThermo\API\Exception\FileNotFoundException;
 use WlanThermo\API\Exception\InvalidConfigException;
 
+require_once PATH_LIB . '/accessProtection.php';
+
 /**
- * Service class for managing the configuration of wlanthermo.
+ * Service class for managing the configuration.
  *
  * Class ConfigService
  * @package WlanThermo\API\Service
@@ -178,4 +180,4 @@ class ConfigService
         $fileContent = implode("\n", $res);
         file_put_contents(self::$pathConfiguration . '/WLANThermo.conf', $fileContent);
     }
-} 
+}

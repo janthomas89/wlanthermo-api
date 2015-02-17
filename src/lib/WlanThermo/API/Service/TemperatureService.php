@@ -1,16 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jan
- * Date: 16.02.15
- * Time: 19:44
- */
 
 namespace WlanThermo\API\Service;
 
-
 use WlanThermo\API\Exception\FileNotFoundException;
 
+require_once PATH_LIB . '/accessProtection.php';
+
+/**
+ * Service class for retrieving the latest temperature values.
+ *
+ * Class TemperatureService
+ * @package WlanThermo\API\Service
+ */
 class TemperatureService
 {
     /**
@@ -86,4 +87,4 @@ class TemperatureService
 
         return date('c', $timestamp);
     }
-} 
+}

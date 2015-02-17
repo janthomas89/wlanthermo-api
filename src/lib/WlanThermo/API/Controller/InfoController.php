@@ -1,20 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jan
- * Date: 16.02.15
- * Time: 20:49
- */
 
 namespace WlanThermo\API\Controller;
 
-
 use WlanThermo\API\Service\LogfileService;
 
+require_once PATH_LIB . '/accessProtection.php';
+
+/**
+ * Controller for getting some device info such as
+ * number and size of logfiles.
+ *
+ * Class InfoController
+ * @package WlanThermo\API\Controller
+ */
 class InfoController extends AbstractController
 {
     /**
-     * Runs the controller specific logic.
+     * Retrieves the info.
      *
      * @return array
      */

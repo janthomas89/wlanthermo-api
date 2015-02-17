@@ -2,13 +2,20 @@
 
 namespace WlanThermo\API\Controller;
 
-
 use WlanThermo\API\Service\ConfigService;
 
+require_once PATH_LIB . '/accessProtection.php';
+
+/**
+ * Controller for getting and setting the configuration.
+ *
+ * Class ConfigController
+ * @package WlanThermo\API\Controller
+ */
 class ConfigController extends AbstractController
 {
     /**
-     * Runs the controller specific logic.
+     * Gets or sets the configuration.
      *
      * @return array
      */
@@ -41,6 +48,8 @@ class ConfigController extends AbstractController
             (int)$this->post('probeType')
         );
 
-        return array('msg' => 'probe ' . (int)$this->post('index') . ' updated');
+        return array(
+            'msg' => 'probe ' . (int)$this->post('index') . ' updated'
+        );
     }
 }
