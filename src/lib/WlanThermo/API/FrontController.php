@@ -44,7 +44,7 @@ class FrontController
             }
         } else {
             self::trigger404(array(
-                'msg' => 'Not found'
+                'msg' => 'Not found, try ?action=latest'
             ));
         }
     }
