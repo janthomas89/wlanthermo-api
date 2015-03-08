@@ -52,6 +52,8 @@ class TemperatureService
                 $values[$date][$j] = floatval($row[$j+1]);
             }
         }
+        
+        $values = array_reverse($values);
 
         return $values;
     }
