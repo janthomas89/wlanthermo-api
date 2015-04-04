@@ -28,4 +28,4 @@ class ShutdownController extends AbstractController
             'msg' => 'wlanthermo shutdown queued'
         );
     }
-
+}
