@@ -41,7 +41,7 @@ class TemperatureService
 
             $row = str_getcsv($file[$i], ',');
 
-            if (count($row) != 9 || $row[0] == 'Datum_Uhrzeit') {
+            if (!(count($row) == 9 || count($row) == 11) ||  $row[0] == 'Datum_Uhrzeit') {
                 continue;
             }
 
